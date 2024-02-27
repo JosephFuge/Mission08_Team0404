@@ -11,8 +11,9 @@ builder.Services.AddDbContext<UserTaskContext>(options =>
     options.UseSqlite(builder.Configuration["ConnectionStrings:TaskConnection"]);
 });
 
-var app = builder.Build();
+builder.Services.AddScoped<ITaskRepository, EFTaskRepository>();
 
+var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
