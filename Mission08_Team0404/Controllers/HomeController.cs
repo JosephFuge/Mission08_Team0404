@@ -8,6 +8,11 @@ namespace Mission08_Team0404.Controllers
     {
         private ITaskRepository _repo;
 
+        public HomeController(ITaskRepository tempRepo)
+        {
+            _repo = tempRepo;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -59,13 +64,13 @@ namespace Mission08_Team0404.Controllers
             return View(userTask);
         }
 
-        //[HttpPost]
-        //public IActionResult DeleteTask(UserTask userTask)
-        //{
-        //    _repo.DeleteTask(userTask);
+        [HttpPost]
+        public IActionResult DeleteTask(UserTask userTask)
+        {
+            _repo.DeleteTask(userTask.TaskId);
 
-        //    return RedirectToAction("TaskQuadrants");
-        //}
+            return RedirectToAction("TaskQuadrants");
+        }
     }
 
 }
