@@ -59,13 +59,13 @@ namespace Mission08_Team0404.Controllers
             return View(userTask);
         }
 
-        [HttpPost]
-        public IActionResult DeleteTask(UserTask userTask)
-        {
-            _repo.DeleteTask(userTask);
+        //[HttpPost]
+        //public IActionResult DeleteTask(UserTask userTask)
+        //{
+        //    _repo.DeleteTask(userTask);
 
-            return RedirectToAction("TaskQuadrants");
-        }
+        //    return RedirectToAction("TaskQuadrants");
+        //}
     }
 
 }
