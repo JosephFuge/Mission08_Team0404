@@ -6,7 +6,7 @@ namespace Mission08_Team0404.Controllers
 {
     public class HomeController : Controller
     {
-        private IUserTaskRepository _repo;
+        private ITaskRepository _repo;
 
         public IActionResult Index()
         {
@@ -26,7 +26,7 @@ namespace Mission08_Team0404.Controllers
         [HttpGet]
         public IActionResult EditTask(int taskId)
         {
-            UserTask userTask = _repo.UserTasks.FirstOrDefault(x => x.UserTaskId == taskId);
+            UserTask userTask = _repo.UserTasks.FirstOrDefault(x => x.TaskId == taskId);
 
             return View("CreateEditTask", userTask);
         }
@@ -36,7 +36,7 @@ namespace Mission08_Team0404.Controllers
 
             if (ModelState.IsValid)
             {
-                _repo.AddUserTask(task);
+                _repo.AddTask(task);
             }
 
             var userTaskList = _repo.UserTasks.ToList();
@@ -54,7 +54,7 @@ namespace Mission08_Team0404.Controllers
         [HttpGet]
         public IActionResult DeleteTask(int taskId)
         {
-            UserTask userTask = _repo.UserTasks.FirstOrDefault(x => x.UserTaskId == taskId);
+            UserTask userTask = _repo.UserTasks.FirstOrDefault(x => x.TaskId == taskId);
 
             return View(userTask);
         }
