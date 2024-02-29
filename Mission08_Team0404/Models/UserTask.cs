@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mission08_Team0404.Models
 {
@@ -12,8 +13,9 @@ namespace Mission08_Team0404.Models
         public string? DueDate { get; set; }
         [Required(ErrorMessage = "Quadrant field is required")]
         public int Quadrant { get; set; }
-        public string? Category { get; set; }
+        [ForeignKey("CategoryId")]
+        public int? CategoryId { get; set; }
+        public Category? CategoryName { get; set; }
         public bool? Completed { get; set; }
-
     }
 }
