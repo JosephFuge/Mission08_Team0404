@@ -17,6 +17,5 @@ namespace Mission08_Team0404.Models
         public int? CategoryId { get; set; }
         public Category? CategoryName { get; set; }
         public bool? Completed { get; set; }
-
     }
 }
