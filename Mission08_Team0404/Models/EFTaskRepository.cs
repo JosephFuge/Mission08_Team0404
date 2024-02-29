@@ -13,6 +13,8 @@ namespace Mission08_Team0404.Models
 
         public List<UserTask> UserTasks => _context.UserTasks.Include(u => u.CategoryName).ToList();
 
+        public List<Category> Categories => _context.Categories.ToList();
+
         public void AddTask(UserTask UserTask)
         {
             _context.Add(UserTask);
