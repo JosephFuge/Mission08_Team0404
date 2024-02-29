@@ -9,5 +9,7 @@ namespace Mission08_Team0404.Models
         public void EditTask(int TaskId);
         public void DeleteTask(int TaskId);
         public void UpdateTask(UserTask UserTask);
+
+        List<Category> Categories { get; }
     }
 }
