@@ -14,12 +14,12 @@
                 @if (@item.Quadrant == 1)
                 {
                     <div class="d-flex align-items-center mb-2">
-                        <form asp-controller="Home" asp-action="EditTask" method="post">
+                        <form asp-controller="Home" asp-action="EditTask" method="get">
                             <input type="hidden" name="taskId" value="@item.TaskId" />
-                            <button style="width: 50px; height: 25px; font-size: 10px;" class="btn btn-sm btn-outline-primary me-2" type="submit">Check off task</button>
+                            <button class="btn btn-sm btn-outline-primary me-2" type="submit">Check off task</button>
                         </form>
                         <span>@item.TaskName  </span>
-                        <form asp-controller="Home" asp-action="EditTask" method="post">
+                        <form asp-controller="Home" asp-action="EditTask" method="get">
                             <input type="hidden" name="taskId" value="@item.TaskId" />
                             <button class="btn btn-sm btn-outline-primary me-2" type="submit">Edit Task</button>
                         </form>
@@ -38,12 +38,12 @@
                 @if (@item.Quadrant == 2)
                 {
                     <div class="d-flex align-items-center mb-2">
-                        <form asp-controller="Home" asp-action="EditTask" method="post">
+                        <form asp-controller="Home" asp-action="EditTask" method="get">
                             <input type="hidden" name="taskId" value="@item.TaskId" />
                             <button type="submit" class="btn btn-sm btn-outline-primary me-2">Check off task</button>
                         </form>
                         <span>@item.TaskName  </span>
-                        <form asp-controller="Home" asp-action="EditTask" method="post">
+                        <form asp-controller="Home" asp-action="EditTask" method="get">
                             <input type="hidden" name="taskId" value="@item.TaskId" />
                             <button type="submit" class="btn btn-sm btn-outline-primary me-2">Edit Task</button>
                         </form>
@@ -65,12 +65,12 @@
                 {
 
                     <div class="d-flex align-items-center mb-2">
-                        <form asp-controller="Home" asp-action="EditTask" method="post">
+                        <form asp-controller="Home" asp-action="EditTask" method="get">
                             <input type="hidden" name="taskId" value="@item.TaskId" />
                             <button type="submit" class="btn btn-sm btn-outline-primary me-2">Check off task</button>
                         </form>
                         <span>@item.TaskName  </span>
-                        <form asp-controller="Home" asp-action="EditTask" method="post">
+                        <form asp-controller="Home" asp-action="EditTask" method="get">
                             <input type="hidden" name="taskId" value="@item.TaskId" />
                             <button type="submit" class="btn btn-sm btn-outline-primary me-2">Edit Task</button>
                         </form>
@@ -89,12 +89,12 @@
                 @if (@item.Quadrant == 4)
                 {
                     <div class="d-flex align-items-center mb-2">
-                        <form asp-controller="Home" asp-action="EditTask" method="post">
+                        <form asp-controller="Home" asp-action="EditTask" method="get">
                             <input type="hidden" name="taskId" value="@item.TaskId" />
                             <button type="submit" class="btn btn-outline-primary me-2">Check off task</button>
                         </form>
                         <span>@item.TaskName  </span>
-                        <form asp-controller="Home" asp-action="EditTask" method="post">
+                        <form asp-controller="Home" asp-action="EditTask" method="get">
                             <input type="hidden" name="taskId" value="@item.TaskId" />
                             <button type="submit" class="btn btn-sm btn-outline-primary me-2">Edit Task</button>
                         </form>
