@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
+
 namespace Mission08_Team0404.Models
 {
     public class EFTaskRepository : ITaskRepository
@@ -9,7 +11,9 @@ namespace Mission08_Team0404.Models
             _context = temp;
         }
 
-        public List<UserTask> UserTasks => _context.UserTasks.ToList();
+        public List<UserTask> UserTasks => _context.UserTasks.Include(u => u.CategoryName).ToList();
+
+        public List<Category> Categories => _context.Categories.ToList();
 
         public void AddTask(UserTask UserTask)
         {
