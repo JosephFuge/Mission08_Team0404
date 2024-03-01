@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission08_Team0404.Models;
 using System.Diagnostics;
 
@@ -19,18 +20,27 @@ namespace Mission08_Team0404.Controllers
         }
 
         [HttpGet]
-        public IActionResult CreateTask() { 
+        public IActionResult CreateTask() {
+            ViewBag.Categories = _repo.Categories.OrderBy(cat => cat.CategoryId).ToList();
             return View("CreateEditTask"); 
         }
 
         [HttpPost]
         public IActionResult CreateTask(UserTask task) {
+            ViewBag.Categories = _repo.Categories.OrderBy(cat => cat.CategoryId).ToList();
+
+            if (ModelState.IsValid)
+            {
+                _repo.AddTask(task);
+            }
+
             return View("CreateEditTask");
         }
 
         [HttpGet]
         public IActionResult EditTask(int taskId)
         {
+            ViewBag.Categories = _repo.Categories.OrderBy(cat => cat.CategoryId).ToList();
             UserTask userTask = _repo.UserTasks.FirstOrDefault(x => x.TaskId == taskId);
 
             return View("CreateEditTask", userTask);
@@ -41,7 +51,7 @@ namespace Mission08_Team0404.Controllers
 
             if (ModelState.IsValid)
             {
-                _repo.AddTask(task);
+                _repo.UpdateTask(task);
             }
 
             var userTaskList = _repo.UserTasks.ToList();
