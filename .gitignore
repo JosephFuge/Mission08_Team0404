@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Mission08_Team0404/UserTasks.sqlite-wal
+/Mission08_Team0404/UserTasks.sqlite-shm
