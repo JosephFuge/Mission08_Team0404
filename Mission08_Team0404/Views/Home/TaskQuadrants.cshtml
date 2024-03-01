@@ -11,7 +11,7 @@
             <h2>Quadrant 1</h2>
             @foreach (var item in Model)
             {
-                @if (@item.Quadrant == 1)
+                @if ((@item.Quadrant == 1) && (@item.Completed != true))
                 {
                     <div class="d-flex align-items-center mb-2">
                         <form asp-controller="Home" asp-action="EditTask" method="get">
@@ -35,7 +35,7 @@
             <h2>Quadrant 2</h2>
             @foreach (var item in Model)
             {
-                @if (@item.Quadrant == 2)
+                @if ((@item.Quadrant == 2) && (@item.Completed != true))
                 {
                     <div class="d-flex align-items-center mb-2">
                         <form asp-controller="Home" asp-action="EditTask" method="get">
@@ -61,7 +61,7 @@
             <h2>Quadrant 3</h2>
             @foreach (var item in Model)
             {
-                @if (@item.Quadrant == 3)
+                @if ((@item.Quadrant == 3) && (@item.Completed != true))
                 {
 
                     <div class="d-flex align-items-center mb-2">
@@ -86,7 +86,7 @@
             <h2>Quadrant 4</h2>
             @foreach (var item in Model)
             {
-                @if (@item.Quadrant == 4)
+                @if ((@item.Quadrant == 4) && (@item.Completed != true))
                 {
                     <div class="d-flex align-items-center mb-2">
                         <form asp-controller="Home" asp-action="EditTask" method="get">
@@ -107,6 +107,4 @@
             }
         </div>
     </div>
-
-
 </div>
