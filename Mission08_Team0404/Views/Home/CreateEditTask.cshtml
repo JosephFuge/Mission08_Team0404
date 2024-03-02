@@ -29,7 +29,10 @@
     </select>
     <br />
     <label asp-for="Completed">Completed: </label>
-    <input asp-for="Completed" />
+    <select asp-for="Completed">
+        <option value="0">False</option>
+        <option value="1">True</option>
+    </select>
     <br />
 
     <button type="submit">Submit</button>
