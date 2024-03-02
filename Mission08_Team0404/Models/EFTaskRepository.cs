@@ -27,7 +27,7 @@ namespace Mission08_Team0404.Models
             _context.SaveChanges();
         }
 
-        public void DeleteTask(int TaskId)
+        public void DeleteTask(UserTask TaskId)
         {
             _context.Remove(TaskId);
             _context.SaveChanges();

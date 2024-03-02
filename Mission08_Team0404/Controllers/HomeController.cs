@@ -77,7 +77,7 @@ namespace Mission08_Team0404.Controllers
         [HttpPost]
         public IActionResult DeleteTask(UserTask userTask)
         {
-            _repo.DeleteTask(userTask.TaskId);
+            _repo.DeleteTask(userTask);
 
             return RedirectToAction("TaskQuadrants");
         }
