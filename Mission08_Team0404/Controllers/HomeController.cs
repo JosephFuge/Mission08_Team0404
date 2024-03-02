@@ -16,13 +16,18 @@ namespace Mission08_Team0404.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("TaskQuadrants");
         }
 
         [HttpGet]
         public IActionResult CreateTask() {
             ViewBag.Categories = _repo.Categories.OrderBy(cat => cat.CategoryId).ToList();
             return View("CreateEditTask"); 
+        }
+
+        public IActionResult CreateEditTask()
+        {
+            return RedirectToAction("CreateTask");
         }
 
         [HttpPost]
